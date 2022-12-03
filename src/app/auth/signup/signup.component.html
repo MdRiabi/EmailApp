@@ -1,21 +1,23 @@
-<form [FormGroup]="authForm">
+<h1>Create an Acount</h1>
+<form class="ui form" [formGroup]="authForm" >
 
     <div class="field">
         <label>UserName</label>
         <input formControlName="userName" />
     </div>
+    <div>{{ authForm.get('userName').errors | json }}</div>
 
     <div class="field">
         <label>Password</label>
         <input formControlName="password">
     </div>
-
+    <div>{{ authForm.get('password').errors | json }}</div>
     <div class="field">
         <label for="">Confirm Password </label>
         <input formControlName="passwordConfirmation" />
     </div>
-
-<button class="ui submit button primary"></button>
+    <div>{{ authForm.get('passwordConfirmation').errors | json }}</div>
+<button class="ui submit button primary">submit</button>
 
 
 

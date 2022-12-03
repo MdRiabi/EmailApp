@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,10 +8,26 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-authForm = new FormGroup({
-userName: new FormControl(''),
-password: new FormControl(''),
-passwordConfirmation: new FormControl(''),
+  authForm = new FormGroup({
+    userName: new FormControl('',
+    [
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(25),
+      Validators.pattern(/^[a-z0-9]+$/),
+]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+
+      ]),
+      passwordConfirmation: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+
+      ]),
 });
 
 
