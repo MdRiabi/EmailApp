@@ -1,1 +1,22 @@
-<p>signup works!</p>
+<form [FormGroup]="authForm">
+
+    <div class="field">
+        <label>UserName</label>
+        <input formControlName="userName" />
+    </div>
+
+    <div class="field">
+        <label>Password</label>
+        <input formControlName="password">
+    </div>
+
+    <div class="field">
+        <label for="">Confirm Password </label>
+        <input formControlName="passwordConfirmation" />
+    </div>
+
+<button class="ui submit button primary"></button>
+
+
+
+</form>

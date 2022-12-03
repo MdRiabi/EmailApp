@@ -24,6 +24,7 @@
       "node_modules/@angular",
       
       "node_modules/@angular/common/http",
+      "node_modules/@angular/forms",
       
     ],
     "module": "es2020",
