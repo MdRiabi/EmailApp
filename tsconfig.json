@@ -2,12 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictNullChecks": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -17,6 +18,14 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",
+    "types": ["node"],
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/@angular",
+      
+      "node_modules/@angular/common/http",
+      
+    ],
     "module": "es2020",
     "lib": [
       "es2020",
@@ -27,6 +36,6 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": false
   }
 }
