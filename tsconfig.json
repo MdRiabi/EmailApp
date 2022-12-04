@@ -6,28 +6,28 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "strictFunctionTypes":false,
+    "strictFunctionTypes": false,
     "strictNullChecks": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    
     "target": "es2017",
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "typeRoots": [
       "node_modules/@types",
       "node_modules/@angular",
-      
-      "node_modules/@angular/common/http",
-      "node_modules/@angular/forms",
-      
+      "node_modules/@angular/common/http"
+     
     ],
     "module": "es2020",
     "lib": [
@@ -35,7 +35,6 @@
       "dom"
     ]
   },
-  
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
