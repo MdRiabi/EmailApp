@@ -1,24 +1,55 @@
 <h1>Create an Acount</h1>
-<form class="ui form" [formGroup]="authForm" >
-
-    <div class="field">
+<form class="ui form" [formGroup]="authForm">
+  <!-- <div class="field">
         <label>UserName</label>
         <input formControlName="userName" />
-    </div>
-    <div>{{ authForm.get('userName').errors | json }}</div>
+    </div> -->
 
-    <div class="field">
+  <app-input
+    inputType="text"
+    label="username"
+    [control]="authForm.get('userName')"
+  >
+  </app-input>
+  <!-- <div>{{ authForm.get('userName').errors | json }}</div> -->
+
+  <!-- <div class="field">
         <label>Password</label>
         <input formControlName="password">
-    </div>
-    <div>{{ authForm.get('password').errors | json }}</div>
-    <div class="field">
+    </div> -->
+  <!-- <div>{{ authForm.get('password').errors | json }}</div> -->
+
+  <app-input
+    inputType="password"
+    label="Password"
+    [control]="authForm.get('password')"
+  ></app-input>
+  <!-- <div class="field">
         <label for="">Confirm Password </label>
         <input formControlName="passwordConfirmation" />
-    </div>
-    <div>{{ authForm.get('passwordConfirmation').errors | json }}</div>
-<button class="ui submit button primary">submit</button>
+    </div> -->
+  <!-- <div>{{ authForm.get('passwordConfirmation').errors | json }}</div> -->
 
-{{ authForm.errors | json }}
+  <app-input
+    inputType="password"
+    label="Password Confirmation"
+    [control]="authForm.get('passwordConfirmation')"
+  ></app-input>
 
+  <div
+    *ngIf="
+      authForm.get('password').touched &&
+      authForm.get('passwordConfirmation').touched &&
+      authForm.errors
+    "
+    class="ui pointing red basic label"
+  >
+    <p *ngIf="authForm.errors.passwordConfirmation">
+      password and password confirmation must match
+    </p>
+  </div>
+
+  <button class="ui submit button primary">submit</button>
+
+<!--   {{ authForm.errors | json }} -->
 </form>
