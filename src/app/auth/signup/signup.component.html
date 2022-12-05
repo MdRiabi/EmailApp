@@ -47,6 +47,14 @@
     <p *ngIf="authForm.errors.passwordConfirmation">
       password and password confirmation must match
     </p>
+    
+    <p *ngIf="authForm.errors.noConnection">
+      No Internet Connection, Failed to signup
+    </p>
+
+    <p *ngIf="authForm.errors.unknownError">
+     unknwon error has ocured 
+    </p>
   </div>
 
   <button class="ui submit button primary">submit</button>
