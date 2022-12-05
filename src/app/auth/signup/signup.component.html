@@ -1,5 +1,5 @@
 <h1>Create an Acount</h1>
-<form class="ui form" [formGroup]="authForm">
+<form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="authForm">
   <!-- <div class="field">
         <label>UserName</label>
         <input formControlName="userName" />
