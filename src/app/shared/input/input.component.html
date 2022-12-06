@@ -1,3 +1,4 @@
+
 <div class="field">
   <label>
     {{ label }}
@@ -7,13 +8,13 @@
     <p *ngIf="control.errors.required">Value is required</p>
 
     <p *ngIf="control.errors.minlength">
-      value you entred is {{ control.errors.minlength.actualLength }} characters
-      long, but it must be at aleast
+      value you entered is {{ control.errors.minlength.actualLength }} characters
+      long, but it must be at least
       {{ control.errors.minlength.requiredLength }} characters
     </p>
 
     <p *ngIf="control.errors.maxlength">
-      value you entred is {{ control.errors.maxlength.actualLength }} characters
+      value you entered is {{ control.errors.maxlength.actualLength }} characters
       long, but it cannot be longer than
       {{ control.errors.maxlength.requiredLength }} characters
     </p>

@@ -1,14 +1,20 @@
 <h1>Sign In</h1>
-<form class="ui form" [formGroup]="authForm">
-
-    <app-input inputType="text" label="Username" [control]="authForm.get('Username')" >
+<form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="authForm">
 
 
-    </app-input>
+  <app-input
+    inputType="text"
+    label="Username"
+    [control]="authForm.get('userName')"
 
-    <app-input inputType="password" label="Password" [control]="authForm.get('password')">
+  ></app-input>
 
-    </app-input>
+
+<app-input
+  inputType="password"
+  label="Password"
+  [control]="authForm.get('password')">
+</app-input>
 
     <button class="ui submit button primary"> Sign In</button>
 </form>

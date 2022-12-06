@@ -1,4 +1,4 @@
-<h1>Create an Acount</h1>
+<h1>Create an Account</h1>
 <form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="authForm">
   <!-- <div class="field">
         <label>UserName</label>
@@ -47,17 +47,15 @@
     <p *ngIf="authForm.errors.passwordConfirmation">
       password and password confirmation must match
     </p>
-    
+
     <p *ngIf="authForm.errors.noConnection">
       No Internet Connection, Failed to signup
     </p>
 
-    <p *ngIf="authForm.errors.unknownError">
-     unknwon error has ocured 
-    </p>
+    <p *ngIf="authForm.errors.unknownError">Unknown error has occurred</p>
   </div>
 
   <button class="ui submit button primary">submit</button>
 
-<!--   {{ authForm.errors | json }} -->
+  <!--   {{ authForm.errors | json }} -->
 </form>
