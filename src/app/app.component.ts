@@ -13,17 +13,19 @@ export class AppComponent {
     this.authService.signedin$.subscribe((signedin) => {
       this.signedin = signedin;
     })
-  } */  
+  } */
   signedin$: BehaviorSubject<boolean>;
   constructor(private authService: AuthService) {
     this.signedin$ = this.authService.signedin$;
-   }
-      
+  }
 
-   ngOnInit() {
-    this.authService.checkAuth().subscribe(() =>{
 
-    });
-   }
+  ngOnInit() {
+    this.authService.checkAuth().subscribe(() => { });
+    setTimeout(() => {
+      this.authService.signout().subscribe(() => { });
+    }, 5000) 
+
+  }
 
 }
