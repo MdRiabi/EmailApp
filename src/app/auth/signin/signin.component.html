@@ -1,20 +1,21 @@
 <h1>Sign In</h1>
 <form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="authForm">
-
-
   <app-input
     inputType="text"
     label="Username"
     [control]="authForm.get('userName')"
-
   ></app-input>
 
+  <app-input
+    inputType="password"
+    label="Password"
+    [control]="authForm.get('password')"
+  >
+  </app-input>
 
-<app-input
-  inputType="password"
-  label="Password"
-  [control]="authForm.get('password')">
-</app-input>
+  <div *ngIf="authForm.errors" class="ui red basic label">
+    <p *ngIf="authForm.errors.credentials">username or password incorrect</p>
+  </div>
 
-    <button class="ui submit button primary"> Sign In</button>
+  <button class="ui submit button primary">Sign In</button>
 </form>

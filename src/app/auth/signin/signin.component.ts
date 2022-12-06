@@ -36,8 +36,16 @@ onSubmit(){
   if(this.authForm.invalid){
 return;
   }
-  this.authService.signin(this.authForm.value).subscribe(() =>{
-    
+  this.authService.signin(this.authForm.value).subscribe({
+    next:() =>{},
+
+    error:({error})  =>{
+      if(error.userName || error.password){
+        this.authForm.setErrors({credentials: true})
+
+      }
+
+    }
   })
 }
 

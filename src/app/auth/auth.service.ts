@@ -79,7 +79,7 @@ export class AuthService {
     )
   }
 
-  signin(credentials:signedinResponse) {
+  signin(credentials: signinCredentials) {
     return this.http.post(`${this.rootUrl}/auth/signin`,credentials)
     .pipe(
       tap(() =>{
