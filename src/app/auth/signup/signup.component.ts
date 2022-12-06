@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {  Router } from '@angular/router';
 
 import { AuthService } from '../auth.service';
 import { MatchPassword } from '../validatros/match-password';
@@ -40,12 +41,13 @@ export class SignupComponent implements OnInit {
   constructor(
     private matchPassword: MatchPassword,
     private uniqueUsername: UniqueUsername,
-    private authServices: AuthService
-  ) { }
+    private authServices: AuthService,
+    private router: Router  ) { }
 
   ngOnInit(): void { }
   
   onSubmit() {
+    this.router.navigateByUrl('/inbox');//redirect me automaticlly in inbox component without testing the api or authtication rules
     if (this.authForm.invalid) {
       return;
     }
@@ -54,7 +56,7 @@ export class SignupComponent implements OnInit {
       .subscribe({
 
         next: response => {
-          console.log(response)
+          this.router.navigateByUrl('/inbox');
         },
         error: err => {
           if (!err.status) {
