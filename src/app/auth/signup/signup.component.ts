@@ -17,8 +17,8 @@ export class SignupComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(25),
+          Validators.minLength(3),
+          Validators.maxLength(20),
           Validators.pattern(/^[a-z0-9]+$/),
         ],
         [this.uniqueUsername.validate]
@@ -59,10 +59,10 @@ export class SignupComponent implements OnInit {
           if (!err.status) {
             this.authForm.setErrors({ noConnection: true });
           }
-          else{
+           else{
             this.authForm.setErrors({ unknownError: true });
 
-          }
+          } 
         }
 
 
