@@ -22,9 +22,9 @@ export class AppComponent {
 
   ngOnInit() {
     this.authService.checkAuth().subscribe(() => { });
-    setTimeout(() => {
+    /* setTimeout(() => {
       this.authService.signout().subscribe(() => { });
-    }, 5000) 
+    }, 5000)  */
 
   }
 
