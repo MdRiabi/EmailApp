@@ -1,10 +1,20 @@
+<!-- in this place we dispaly the emails list for the current user in a ancor   -->
+<!-- once the url changes inbox routing module displays the email show component car (url ends with /inbox/id) (children = id) -->
 <div class="ui celled list">
-  <div class="item">
-    <div class="content" *ngFor="let email of emails">
-      <div class="header"> {{email.subject}} </div>
-      <p>
-        {{email.from}}
-      </p>
-    </div>
+
+  <div class="item" *ngFor="let email of emails">
+
+    <a [routerLink]="email.id" routerLinkActive="active" >
+      <div class="content">
+        <div class="header">
+
+          {{ email.subject }}
+        </div>
+        <p>
+          {{ email.from }}
+        </p>
+      </div>
+
+    </a>
   </div>
-</div>
+</div> 
