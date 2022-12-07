@@ -8,6 +8,7 @@ import { EmailReplyComponent } from './email-reply/email-reply.component';
 import { EmailIndexComponent } from './email-index/email-index.component';
 
 import { EmailShowComponent } from './email-show/email-show.component';
+import { PlaceHolderComponent } from './place-holder/place-holder.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EmailShowComponent } from './email-show/email-show.component';
     EmailCreateComponent,
     EmailReplyComponent,
     EmailIndexComponent,
-    EmailShowComponent
+    EmailShowComponent,
+    PlaceHolderComponent
   ],
   imports: [
     CommonModule,
