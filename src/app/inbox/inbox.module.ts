@@ -10,6 +10,7 @@ import { EmailIndexComponent } from './email-index/email-index.component';
 import { EmailShowComponent } from './email-show/email-show.component';
 import { PlaceHolderComponent } from './place-holder/place-holder.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SharedModule } from 'app/shared/shared.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     CommonModule,
-    InboxRoutingModule
+    InboxRoutingModule,
+    SharedModule
   ]
 })
 export class InboxModule { }
